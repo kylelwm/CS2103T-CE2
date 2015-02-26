@@ -103,4 +103,18 @@ public class TextBuddyTest {
 		TextBuddy.executeInput(commandFive);
 		assertEquals("fileName.txt saved\nThank you for using textbuddy\n", outContent.toString());
 	}
+	
+	//Code for TDD sort goes here
+	@Test
+	public void testSort() throws Exception{
+		//Setting up my textBuddy
+		TextBuddy.textList = new ArrayList<String>();
+		TextBuddy.fileName = "fileName.txt";
+		TextBuddy.textFile = new File(TextBuddy.fileName);
+		
+		//User command => sort
+		String[] commandSortOne = {"sort"};
+		TextBuddy.executeInput(commandSortOne);
+		assertEquals("fileName.txt has been sorted alphabetically\n", outContent.toString());	
+	}
 }
